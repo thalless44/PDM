@@ -1,6 +1,7 @@
 package com.ifsc.contaclicks;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("ciclo de vida ", "metodo onStart");
         setContentView(R.layout.activity_main);
         edPeso=findViewById(R.id.edPeso);
         edAltura=findViewById(R.id.edAltura);
@@ -41,6 +43,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("ciclo de vida ", "metodo onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("ciclo de vida", "onResume");
+    }
 
 
 }
