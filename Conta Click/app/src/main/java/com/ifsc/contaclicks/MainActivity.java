@@ -12,15 +12,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
-    Integer i = 0;
     EditText edPeso, edAltura;
     Button buttoncalcular;
     TextView tvResultado;
-
-    Integer resultado = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +33,14 @@ public class MainActivity extends AppCompatActivity {
             peso=Double.parseDouble(edPeso.getText().toString());
             altura=Double.parseDouble(edAltura.getText().toString());
             imc=peso/(altura*altura);
+//            Formatando numero ##,##
+            DecimalFormat decimalFormat = new DecimalFormat("##,##");
+
             tvResultado.setText(Double.toString(imc));
 
         });
 
-
-
-
-
-
-        };
+        }
 
 
 }
