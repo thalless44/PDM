@@ -2,77 +2,96 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tvresultadoimc"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="calcular"
-        android:textSize="24sp"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="451dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="232dp"
+        android:text="@string/Click"
+        android:textColorLink="#D51717"
+        app:iconSize="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="369dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Calcular" />
 
     <EditText
-        android:id="@+id/edPeso"
-        android:layout_width="123dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="32dp"
+        android:id="@+id/edpeso"
+        android:layout_width="157dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="64dp"
         android:ems="10"
-        android:hint="60kg"
+        android:hint="kg"
         android:inputType="text"
-        app:layout_constraintEnd_toStartOf="@+id/edAltura"
+        app:layout_constraintEnd_toStartOf="@+id/edaltura"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edAltura"
-        android:layout_width="153dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="32dp"
+        android:id="@+id/edaltura"
+        android:layout_width="160dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="64dp"
         android:ems="10"
-        android:hint="177cm"
+        android:hint="m"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/edPeso"
+        app:layout_constraintStart_toEndOf="@+id/edpeso"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvPeso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Peso"
-        app:layout_constraintBottom_toTopOf="@+id/edPeso"
-        app:layout_constraintStart_toStartOf="@+id/edPeso"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvAltura"
+        android:id="@+id/tvpeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="Altura"
-        app:layout_constraintBottom_toTopOf="@+id/edAltura"
-        app:layout_constraintStart_toStartOf="@+id/edAltura"
+        android:layout_marginTop="44dp"
+        android:text="Peso"
+        app:layout_constraintStart_toStartOf="@+id/edpeso"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvResultado"
+        android:id="@+id/tvaltura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:text="Altura"
+        app:layout_constraintStart_toStartOf="@+id/edaltura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvresultadoimc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPeso" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalcular"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="380dp"
+        android:layout_height="297dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/perfil"
+        tools:layout_editor_absoluteY="130dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
