@@ -1,10 +1,13 @@
 package com.ifsc.contaclicks;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,44 +20,41 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edPeso, edAltura;
-    Button buttoncalcular;
-    TextView tvResultado;
+    int posicao = 0;
+    EditText edpeso, edaltura;
+    TextView tvresultadoimc;
+    Button Button, ButtonNextImage;
+
+    ImageView imageView;
+    Integer imagens [] = new Integer[] {
+            R.drawable.cachorro,
+            R.drawable.gardem,
+            R.drawable.happy,
+            R.drawable.patinho
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("ciclo de vida ", "metodo onStart");
+        Log.d("ciclo de vida", "metodo onCreate");
         setContentView(R.layout.activity_main);
-        edPeso=findViewById(R.id.edPeso);
-        edAltura=findViewById(R.id.edAltura);
-        tvResultado=findViewById(R.id.tvResultado);
-        buttoncalcular.setOnClickListener(v->{
-            //clacular
-            double peso,altura,imc;
-            peso=Double.parseDouble(edPeso.getText().toString());
-            altura=Double.parseDouble(edAltura.getText().toString());
-            imc=peso/(altura*altura);
-//            Formatando numero ##,##
-            DecimalFormat decimalFormat = new DecimalFormat("##,##");
+        edpeso= findViewById(R.id.edpeso);
+        edaltura= findViewById(R.id.edaltura);
+        tvresultadoimc= findViewById(R.id.tvresultadoimc);
+        Button= findViewById(R.id.button);
+        ButtonNextImage= findViewById(R.id.button2);
+        imageView =  findViewById(R.id.imageView);
 
-            tvResultado.setText(Double.toString(imc));
-
+        Button.setOnClickListener(v -> {});
+        ButtonNextImage.setOnClickListener(v -> {
+            imageView.setImageResource(imagens[posicao]);
+            if (posicao < imagens.length){
+                posicao++;
+            }else{
+                posicao =0;
+            }
         });
 
-        }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("ciclo de vida ", "metodo onStart");
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("ciclo de vida", "onResume");
-    }
-
 
 }
