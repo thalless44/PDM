@@ -35,21 +35,16 @@ public class MainActivity extends AppCompatActivity {
         //Define um tratamento para o click do button
         buttonCalcular.setOnClickListener(v -> {
 
-            Intent intent = new Intent(getApplicationContext(), MainActivityB.class);
-
             double valorPeso = Double.parseDouble(edpeso.getText().toString());
             double valorAltura = Double.parseDouble(edaltura.getText().toString());
 
-            double resultado = (valorPeso/(valorAltura*valorAltura));
+            double resultado = valorPeso / (valorAltura * valorAltura);
 
-
-            intent.putExtra("Mensagem",msg);
-            startActivity(intent);
-
-
-
-
+            Intent telaResultado = new Intent(this, MainActivityBB.class);
+            telaResultado.putExtra("resultado_imc", resultado);
+            startActivity(telaResultado);
         });
+
 
     }
 
