@@ -1,41 +1,30 @@
 package com.ifsc.contaclicks;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
     Integer i = 0;
+    String [] nomes= new String []{"Amanda", "Anne", "João", "João2"};
+    ListView lv ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Associando objeto informando a variavel local
-        TextView tv = findViewById(R.id.TextView);
-        tv.setText(getString(R.string.app_name));
+        //recuperar o listView
+        lv = findViewById(R.id.id_view);
 
-        Button b = findViewById(R.id.button);
+        //Adaptador
+        ArrayAdapter<String> a = new ArrayAdapter(
+            this, R.layout.itens,R.id.textView, nomes);
+        lv.setAdapter(a);
 
-        b.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                tv.setText(Integer.toString(i));
-                i++;
-
-            }
-        });
 
 
     }
