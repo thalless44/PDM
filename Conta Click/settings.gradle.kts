@@ -19,6 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ContaClicks"
+rootProject.name = "Conta Clicks"
 include(":app")
- 

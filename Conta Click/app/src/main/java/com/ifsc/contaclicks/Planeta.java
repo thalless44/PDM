@@ -1,30 +1,17 @@
 package com.ifsc.contaclicks;
 
-import android.os.Bundle;
-import android.widget.TextView;
+import android.graphics.Bitmap;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import java.io.Serializable;
 
-public class Planeta extends AppCompatActivity {
+public class Planeta implements Serializable {
+    String nome;
+    //Bitmap Imagem;
+    Integer imagem; //São recursos da pasta drawable R.drawable.nome
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_planeta);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-
-            Bundle b = getIntent().getExtras();
-            b.get("nome");
-            TextView tv = findViewById(R.id.textView);
-            tv.setText(b.get("nome").toString());
-        });
+    public Planeta(String nome, Integer imagem) {
+        this.nome = nome;
+        this.imagem = imagem;
     }
 }
+
