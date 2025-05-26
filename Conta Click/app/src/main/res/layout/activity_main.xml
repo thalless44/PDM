@@ -13,20 +13,24 @@
         android:layout_height="wrap_content"
         android:text="@string/Click"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="293dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextText"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="19dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
+        android:id="@+id/view"
         android:layout_width="409dp"
         android:layout_height="661dp"
         tools:layout_editor_absoluteX="1dp"
