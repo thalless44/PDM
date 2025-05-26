@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Integer i = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,21 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Associando objeto informando a variavel local
-        TextView tv = findViewById(R.id.TextView);
-        tv.setText(getString(R.string.app_name));
 
-        Button b = findViewById(R.id.button);
-
-        b.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                tv.setText(Integer.toString(i));
-                i++;
-
-            }
-        });
 
 
     }
