@@ -8,25 +8,41 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/TextView"
+        android:id="@+id/textViewX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Ola"
-        android:textColor="#FD0000"
+        android:text="ola"
+        android:textColor="#F44336"
         android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textViewY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/textViewZ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Click"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/TextView"
-        app:layout_constraintStart_toStartOf="@+id/TextView"
-        app:layout_constraintTop_toBottomOf="@+id/TextView" />
+        android:text="Ola"
+        android:textColor="#F44336"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewY"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textViewY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ola"
+        android:textColor="#F44336"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewZ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewX"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
