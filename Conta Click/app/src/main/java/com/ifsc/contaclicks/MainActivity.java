@@ -1,5 +1,8 @@
 package com.ifsc.contaclicks;
 
+import static com.ifsc.contaclicks.R.id.button;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvresultado;
     Button buttonCalcular;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,21 +32,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         edpeso = findViewById(R.id.edpeso);
+        edpeso.setText("80");
         edaltura = findViewById(R.id.edaltura);
-        tvresultado = findViewById(R.id.tvresultadoimc);
-        buttonCalcular = findViewById(R.id.buttonCalcular);
+        edaltura.setText("1.80");
+
+        buttonCalcular = findViewById(R.id.button);
 
         //Define um tratamento para o click do button
         buttonCalcular.setOnClickListener(v -> {
+            Intent intent = new Intent(this, MainActivityBB.class);
+            double peso = Double.parseDouble(edpeso.getText().toString());
+            double altura = Double.parseDouble(edaltura.getText().toString());
 
-            double valorPeso = Double.parseDouble(edpeso.getText().toString());
-            double valorAltura = Double.parseDouble(edaltura.getText().toString());
+            intent.putExtra("peso", peso);
+            intent.putExtra("altura", altura);
 
-            double resultado = valorPeso / (valorAltura * valorAltura);
-
-            Intent telaResultado = new Intent(this, MainActivityBB.class);
-            telaResultado.putExtra("resultado_imc", resultado);
-            startActivity(telaResultado);
+            startActivity(intent);
         });
 
 
